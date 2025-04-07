@@ -12,7 +12,7 @@ const toggleMenu = () => {
 };
 
 return (
-    <nav className="bg-white px-6 py-4 shadow-md">
+    <nav className="bg-white px-6 py-4 shadow-md fixed top-0 left-0 w-full z-50">
     <div className="max-w-full mx-auto flex items-center justify-between flex-wrap">
         {/* Logo */}
         <div className="flex flex-col items-start">
