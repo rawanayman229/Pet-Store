@@ -1,6 +1,6 @@
-@import "tailwindcss/utilities";
 @import "tailwindcss";
 @import "tailwindcss";
+
 
 
 body {
@@ -28,4 +28,5 @@ body {
 .button-transparent:hover {
   background-color: #003459;
   color: white;
+
 }
