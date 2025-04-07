@@ -1,11 +1,14 @@
-import React from 'react';
-import Navbar from './components/Navbar';
+
+import React from "react";
+import Home from "./../src/pages/Homepage";  
 
 const App: React.FC = () => {
   return (
-    <>
-      <Navbar />
-    </>
+    <div>
+      <Home />  {/* call lel home */}
+    </div>
+
+
   );
 };
 
