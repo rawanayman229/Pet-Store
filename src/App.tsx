@@ -1,8 +1,11 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import HomeHero from './components/HomeHero';
-import Home from './pages/Homepage';
 import HomeBanner1 from './components/HomeBanner1';
+import ProductCardSection from './components/cardproducts/ProductsSection';
+import PetCardSection from './components/card/CardSection';
+import PetKnowledge from './components/cardKnolge/knowlegeSection';
+
 
 
 const App: React.FC = () => {
@@ -10,8 +13,12 @@ const App: React.FC = () => {
     <>
       <Navbar />
       <HomeHero />
-      <Home/>
+      <PetCardSection  />
       <HomeBanner1 />
+      <ProductCardSection  />
+      <PetKnowledge />
+      
+
     </>
   );
 };
