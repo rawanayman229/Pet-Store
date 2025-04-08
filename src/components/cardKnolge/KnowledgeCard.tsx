@@ -9,7 +9,7 @@ interface KnowledgeCardProps {
   };
 }
 
-const KnowledgeCard: React.FC<KnowledgeCardProps> = ({ item }) => {
+const KnowledgeCardSection: React.FC<KnowledgeCardProps> = ({ item }) => {
   return (
     <div className="rounded-2xl shadow-md overflow-hidden bg-white">
       <img src={item.image} alt={item.title} className="w-full h-48 object-cover" />
@@ -24,4 +24,4 @@ const KnowledgeCard: React.FC<KnowledgeCardProps> = ({ item }) => {
   );
 };
 
-export default KnowledgeCard;
+export default KnowledgeCardSection;

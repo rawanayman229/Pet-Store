@@ -1,4 +1,3 @@
-// src/components/card/productsCard.tsx
 import React from "react";
 import { Product } from "../../data/products";
 
