@@ -1,5 +1,5 @@
 import React from "react";
-import PetCardSection from "./../components/card/CardSection";
+import PetCardSection from "../components/card/CardSection";
 import { pets } from "./../data/pets";
 
 const Home: React.FC = () => {
