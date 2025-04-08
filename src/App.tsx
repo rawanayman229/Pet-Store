@@ -5,11 +5,14 @@ import Home from "./../src/pages/Homepage";
 
 const App: React.FC = () => {
   return (
-    <>
-      <Navbar />
-      <HomeHero />
-      <Home />
-    </>
+    <div>
+     
+      <Navbar /> {/* call lel navbar */}
+      <HomeHero /> {/* call lel hero */}
+      <Home />  {/* call lel home */}
+    </div>
+
+
   );
 };
 
