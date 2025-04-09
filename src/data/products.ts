@@ -15,7 +15,7 @@ export interface Product {
       category: "Dog Food",
       size: "385gm",
       price: "140.000 VND",
-      image: "public/images/product.png",
+      image: "images/product.png",
       offer: "🎁 Free Toy & Free Shaker"
     },
     {
@@ -24,7 +24,7 @@ export interface Product {
       category: "Cat Food",
       size: "1.5kg",
       price: "165.000 VND",
-      image: "public/images/product.png",
+      image: "images/product.png",
       offer: "🎁 Free Toy & Free Shaker"
     },
     {
@@ -33,7 +33,7 @@ export interface Product {
       size: "385gm",
       category: "Toy",
       price: "1.100.000 VND",
-      image: "public/images/product.png",
+      image: "images/product.png",
       offer: "🎁 Free Cat Food"
     },
     {
@@ -42,7 +42,7 @@ export interface Product {
       size: "1.5kg",
       category: "Toy",
       price: "410.000 VND",
-      image: "public/images/product.png",
+      image: "images/product.png",
       offer: "🎁 Free Cat Food"
     },
     {
@@ -51,7 +51,7 @@ export interface Product {
       category: "Dog Food",
       size: "385gm",
       price: "140.000 VND",
-      image: "public/images/product.png",
+      image: "images/product.png",
       offer: "🎁 Free Toy & Free Shaker"
     },
     {
@@ -60,7 +60,7 @@ export interface Product {
       category: "Cat Food",
       size: "1.5kg",
       price: "165.000 VND",
-      image: "public/images/product.png",
+      image: "images/product.png",
       offer: "🎁 Free Toy & Free Shaker"
     },
     {
@@ -69,7 +69,7 @@ export interface Product {
       category: "Toy",
       size: "385gm",
       price: "1.100.000 VND",
-      image: "public/images/product.png",
+      image: "images/product.png",
       offer: "🎁 Free Cat Food"
     },
     {
@@ -78,7 +78,7 @@ export interface Product {
       category: "Toy",
       size: "1.5kg",
       price: "410.000 VND",
-      image: "public/images/product.png",
+      image: "images/product.png",
       offer: "🎁 Free Cat Food"
     }
     

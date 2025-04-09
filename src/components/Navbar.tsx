@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { InputText } from "primereact/inputtext";
 import { IconField } from 'primereact/iconfield';
 import { InputIcon } from 'primereact/inputicon';
+import { Link } from "react-router-dom";
 
 const Navbar: React.FC = () => {
 const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,8 +22,8 @@ return (
 
         {/* Links */}
         <ul className={`flex space-x-6 text-lg font-semibold text-blue-950 sm:flex ${isMenuOpen ? 'block' : 'hidden'} sm:block`}>
-        <li><a href="#" className="hover:text-blue-500">Home</a></li>
-        <li><a href="#" className="hover:text-blue-500">Category</a></li>
+        <Link to="/" className="hover:text-blue-500">Home</Link>
+        <Link to="/category" className="hover:text-blue-500">Category</Link>
         <li><a href="#" className="hover:text-blue-500">About</a></li>
         <li><a href="#" className="hover:text-blue-500">Contact</a></li>
         </ul>

@@ -1,25 +1,23 @@
-import React from 'react';
-import Navbar from './components/Navbar';
-import HomeHero from './components/HomeHero';
-import HomeBanner1 from './components/HomeBanner1';
-import ProductCardSection from './components/cardproducts/ProductsSection';
-import PetCardSection from './components/card/CardSection';
-import PetKnowledge from './components/cardKnolge/knowlegeSection';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/footer";
+import HomePage from "./pages/Homepage";
+import CategoryPage from "./pages/categoriespage";
 
 
 
 const App: React.FC = () => {
   return (
-    <>
+    <Router>
       <Navbar />
-      <HomeHero />
-      <PetCardSection  />
-      <HomeBanner1 />
-      <ProductCardSection  />
-      <PetKnowledge />
-      
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/categoriespage" element={<CategoryPage />} />
 
-    </>
+      </Routes>
+      <Footer />
+    </Router>
   );
 };
 
