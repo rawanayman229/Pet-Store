@@ -1,29 +1,36 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import HomeHero from './components/HomeHero';
-import HomeBanner1 from './components/HomeBanner1';
+import FirstBanner from './components/FirstBanner';
 import ProductCardSection from './components/cardproducts/ProductsSection';
 import PetCardSection from './components/card/CardSection';
 import PetKnowledge from './components/cardKnolge/knowlegeSection';
 import PetsSellers from './components/PetsSellers';
-import HomeBanner2 from './components/HomeBanner2';
-
+import SecondBanner from './components/SecondBanner';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ProductDetails from './pages/ProductDetails';
 
 
 const App: React.FC = () => {
   return (
-    <>
+    <BrowserRouter  basename="/round-3-pet-store-front">
       <Navbar />
-      <HomeHero />
-      <PetCardSection  />
-      <HomeBanner1 />
-      <ProductCardSection  />
-      <PetsSellers />
-      <HomeBanner2 />
-      <PetKnowledge />
-      
-
-    </>
+      <Routes>
+        <Route path="/" element={
+          <>
+            <HomeHero />
+            <PetCardSection />
+            <FirstBanner />
+            <ProductCardSection />
+            <PetsSellers />
+            <SecondBanner />
+            <PetKnowledge />
+          </>
+        } />
+        
+        <Route path="/productDetails" element={<ProductDetails />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
