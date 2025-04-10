@@ -2,7 +2,7 @@ const Hero: React.FC = () =>{
 
     return (
         <section
-            className="mt-0 pt-20 bg-cover bg-center bg-no-repeat w-full h-auto rounded-xl flex flex-col md:flex-row justify-between items-center px-4 md:px-20 text-center md:text-left"
+            className="mt-0 pt-20 bg-cover bg-center bg-no-repeat w-full min:h-[100vh] rounded-xl flex flex-col md:flex-row justify-between items-center px-4 md:px-20 text-center md:text-left"
             style={{ backgroundImage: "url('images/hero.png')" }}>
 
       {/* Left Content */}

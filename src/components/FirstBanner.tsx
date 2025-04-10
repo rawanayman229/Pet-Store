@@ -3,8 +3,13 @@ import React from "react";
 const FirstBanner: React.FC = () => {
   return (
     <section
-      className="mt-20 bg-cover bg-center bg-no-repeat w-full h-auto rounded-xl flex flex-col md:flex-row justify-between items-center
-        px-4 md:px-20 text-right md:text-right bg-[url('images/bannerMob.png')] md:bg-[url('images/banner1.png')] sm:flex-col sm:items-center"
+      className="mt-20 w-full h-auto rounded-xl flex flex-col md:flex-row justify-between items-center px-4 md:px-20 text-right md:text-right"
+      style={{
+        backgroundImage: "url('images/banner1.png')", 
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
     >
       {/* Left Content (Hidden on small screens) */}
       <img
@@ -29,19 +34,17 @@ const FirstBanner: React.FC = () => {
           different pets that can meet your needs!
         </p>
 
-          {/* Buttons */}
-    <div className="flex flex-row justify-end sm:flex-row gap-4 w-full mt-6 ">
-                    <button className="bg-transparent border border-gray-900 text-gray-900 font-semibold transition-all duration-400 
-                    px-6 py-3 rounded-full hover:bg-gray-900 hover:text-white justify-center flex items-center gap-2 cursor-pointer">
-                        View Intro  
-                        <i className="pi pi-play-circle"></i>
-                    </button>
+        {/* Buttons */}
+        <div className="flex flex-row justify-end sm:flex-row gap-4 w-full mt-6 ">
+          <button className="bg-transparent border border-gray-900 text-gray-900 font-semibold transition-all duration-400 px-6 py-3 rounded-full hover:bg-gray-900 hover:text-white justify-center flex items-center gap-2 cursor-pointer">
+            View Intro
+            <i className="pi pi-play-circle"></i>
+          </button>
 
-                    <button className="bg-gray-900 text-white px-6 py-3 rounded-full hover:bg-transparent hover:border
-                    hover:border-gray-900 hover:text-black transition-all duration-400  cursor-pointer">
-    Explore Now
-                    </button>
-    </div>
+          <button className="bg-gray-900 text-white px-6 py-3 rounded-full hover:bg-transparent hover:border hover:border-gray-900 hover:text-black transition-all duration-400  cursor-pointer">
+            Explore Now
+          </button>
+        </div>
       </div>
 
       {/* Image for small screens (appears below the text) */}
