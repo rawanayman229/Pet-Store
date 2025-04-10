@@ -1,4 +1,3 @@
-import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -34,6 +33,7 @@ const Footer = () => {
           <a href="#" className="hover:text-blue-500 transition">Contact</a>
         </div>
 
+
         <div className="flex gap-4 text-xl justify-center">
           <a href="#" className="hover:text-blue-500 transition"><FaFacebookF /></a>
           <a href="#" className="hover:text-blue-500 transition"><FaTwitter /></a>
@@ -45,6 +45,7 @@ const Footer = () => {
       {/* Bottom Section */}
       <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-600 gap-4 text-center">
         
+
         <p>© 2022 Monito. All rights reserved.</p>
         
         <div>
