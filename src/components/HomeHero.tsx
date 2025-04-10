@@ -1,4 +1,4 @@
-const Hero = () => {
+const Hero: React.FC = () =>{
     return (
         <section
             className="mt-20 bg-cover bg-center bg-no-repeat w-full min-h-[90vh] flex items-center justify-center px-4 md:px-20"
