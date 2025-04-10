@@ -66,58 +66,22 @@ const Navbar: React.FC = () => {
             <img src="images/logo.png" alt="Logo" className="h-10 mx-auto max-w-full" />
           </a>
 
-          {/* Search Icon - Mobile (right side) */}
-          <div className="sm:hidden flex-grow text-right">
-            <button
-              onClick={toggleSearch}
-              className="text-blue-950 hover:text-blue-500 text-2xl"
-            >
-              <i className="pi pi-search"></i>
-            </button>
-          </div>
 
-          {/* Links - Desktop Only */}
-          <ul className="hidden sm:flex space-x-6 text-lg font-semibold text-blue-950">
-            <li>
-              <Link to="/" className="hover:text-blue-500 transition-all duration-400">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to="/category" className="hover:text-blue-500 transition-all duration-400">
-                Category
-              </Link>
-            </li>
-            <li>
-              <a href="#" className="hover:text-blue-500 transition-all duration-400">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-blue-500 transition-all duration-400">
-                Contact
-              </a>
-            </li>
-          </ul>
+        {/* Links */}
+        <ul className={`flex space-x-6 text-lg font-semibold text-blue-950 sm:flex ${isMenuOpen ? 'block' : 'hidden'} sm:block`}>
+        <Link to="/" className="hover:text-blue-500">Home</Link>
+        <Link to="/categoriespage" className="hover:text-blue-500">Category</Link>
+        <li><a href="#" className="hover:text-blue-500">About</a></li>
+        <li><a href="#" className="hover:text-blue-500">Contact</a></li>
+        </ul>
 
-          {/* Search - Desktop Only */}
-          <div className="hidden md:flex items-center space-x-2">
-            <IconField iconPosition="left">
-              <InputIcon className="pi pi-search" />
-              <InputText
-                placeholder="Search something here!"
-                className="!rounded-full bg-white border px-4 py-2 shadow-sm focus:outline-none"
-              />
-            </IconField>
-          </div>
+        {/* Search bar */}
+        <div className="sm:flex items-center space-x-2">
+        <IconField iconPosition="left">
+            <InputIcon className="pi pi-search" />
+            <InputText placeholder="Search something here!" />
+        </IconField>
 
-          {/* Join Button - Desktop Only */}
-          <a
-            href="#"
-            className="hidden sm:block bg-blue-950 text-white font-semibold px-6 py-2 hover:bg-blue-500 transition-all duration-400 rounded-full"
-          >
-            Join the community
-          </a>
         </div>
 
         {/* Search Field - Mobile */}
