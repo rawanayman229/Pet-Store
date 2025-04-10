@@ -77,16 +77,16 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Links - Desktop Only */}
-          <ul className="hidden sm:flex space-x-6 text-lg font-semibold text-blue-950 ">
+          <ul className="hidden sm:flex space-x-6 text-lg font-semibold text-blue-950">
             <li>
-              <a href="#" className="hover:text-blue-500 transition-all duration-400">
+              <Link to="/" className="hover:text-blue-500 transition-all duration-400">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:text-blue-500 transition-all duration-400">
+              <Link to="/category" className="hover:text-blue-500 transition-all duration-400">
                 Category
-              </a>
+              </Link>
             </li>
             <li>
               <a href="#" className="hover:text-blue-500 transition-all duration-400">
@@ -118,28 +118,13 @@ const Navbar: React.FC = () => {
           >
             Join the community
           </a>
-
-        {/* Links */}
-        <ul className={`flex space-x-6 text-lg font-semibold text-blue-950 sm:flex ${isMenuOpen ? 'block' : 'hidden'} sm:block`}>
-        <Link to="/" className="hover:text-blue-500">Home</Link>
-        <Link to="/category" className="hover:text-blue-500">Category</Link>
-        <li><a href="#" className="hover:text-blue-500">About</a></li>
-        <li><a href="#" className="hover:text-blue-500">Contact</a></li>
-        </ul>
-
-        {/* Search bar */}
-        <div className="sm:flex items-center space-x-2">
-        <IconField iconPosition="left">
-            <InputIcon className="pi pi-search" />
-            <InputText placeholder="Search something here!" />
-        </IconField>
         </div>
 
         {/* Search Field - Mobile */}
         {searchVisible && (
           <div
             ref={searchInputRef}
-            className="sm:hidden  absolute top-full left-0 w-full bg-white shadow-md z-40 p-4 transition-all duration-300 ease-in-out"
+            className="sm:hidden absolute top-full left-0 w-full bg-white shadow-md z-40 p-4 transition-all duration-300 ease-in-out"
           >
             <IconField iconPosition="left" className="w-full">
               <InputIcon className="pi pi-search" />
@@ -167,12 +152,12 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Links */}
-          <a href="#" className="text-lg font-semibold text-blue-950 hover:text-blue-500 ">
+          <Link to="/" className="text-lg font-semibold text-blue-950 hover:text-blue-500">
             Home
-          </a>
-          <a href="#" className="text-lg font-semibold text-blue-950 hover:text-blue-500">
+          </Link>
+          <Link to="/category" className="text-lg font-semibold text-blue-950 hover:text-blue-500">
             Category
-          </a>
+          </Link>
           <a href="#" className="text-lg font-semibold text-blue-950 hover:text-blue-500">
             About
           </a>
