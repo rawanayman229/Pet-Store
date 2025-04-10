@@ -1,4 +1,3 @@
-import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -30,14 +29,14 @@ const Footer = () => {
           <a href="#" className="hover:text-blue-500 transition">Contact</a>
         </div>
         <div className="flex gap-4 text-xl">
-          <a href="#" className="hover:text-blue-500 transition"><FaFacebookF /></a>
-          <a href="#" className="hover:text-blue-500 transition"><FaTwitter /></a>
-          <a href="#" className="hover:text-blue-500 transition"><FaInstagram /></a>
-          <a href="#" className="hover:text-blue-500 transition"><FaYoutube /></a>
+          <a href="#" className="hover:text-blue-500 transition"><i className="pi pi-facebook"></i></a>
+          <a href="#" className="hover:text-blue-500 transition"><i className="pi pi-twitter"></i></a>
+          <a href="#" className="hover:text-blue-500 transition"><i className="pi pi-instagram"></i></a>
+          <a href="#" className="hover:text-blue-500 transition"><i className="pi pi-youtube"></i></a>
         </div>
       </div>
 
-     
+  
       <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
         <p>© 2022 Monito. All rights reserved.</p>
         <div className="flex flex-col items-start">
