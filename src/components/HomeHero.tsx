@@ -2,7 +2,7 @@ const Hero = () => {
     return (
         <section
             className="mt-20 bg-cover bg-center bg-no-repeat w-full min-h-[90vh] flex items-center justify-center px-4 md:px-20"
-            style={{ backgroundImage: "url('images/hero.png')" }}>
+            style={{ backgroundImage: "url('/images/hero.png')" }}>
 
             <div className="z-10 w-full max-w-4xl text-center md:text-left text-white ">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-blue-950">

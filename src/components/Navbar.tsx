@@ -23,7 +23,7 @@ return (
         {/* Links */}
         <ul className={`flex space-x-6 text-lg font-semibold text-blue-950 sm:flex ${isMenuOpen ? 'block' : 'hidden'} sm:block`}>
         <Link to="/" className="hover:text-blue-500">Home</Link>
-        <Link to="/category" className="hover:text-blue-500">Category</Link>
+        <Link to="/categoriespage" className="hover:text-blue-500">Category</Link>
         <li><a href="#" className="hover:text-blue-500">About</a></li>
         <li><a href="#" className="hover:text-blue-500">Contact</a></li>
         </ul>

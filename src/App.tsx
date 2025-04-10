@@ -5,16 +5,13 @@ import Footer from "./components/footer";
 import HomePage from "./pages/Homepage";
 import CategoryPage from "./pages/categoriespage";
 
-
-
 const App: React.FC = () => {
   return (
-    <Router>
+    <Router basename="/">
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/categoriespage" element={<CategoryPage />} />
-
       </Routes>
       <Footer />
     </Router>
