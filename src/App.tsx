@@ -9,6 +9,13 @@ import PetsSellers from './components/PetsSellers';
 import SecondBanner from './components/SecondBanner';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ProductDetails from './pages/ProductDetails';
+import Navbar from "./components/Navbar";
+import Footer from "./components/footer";
+import HomePage from "./pages/Homepage";
+import CategoryPage from "./pages/categoriespage";
+
+
+
 
 
 const App: React.FC = () => {
@@ -29,8 +36,13 @@ const App: React.FC = () => {
         } />
         
         <Route path="/productDetails" element={<ProductDetails />} />
+         <Route path="/categoriespage" element={<CategoryPage />} />
       </Routes>
     </BrowserRouter>
+
+      </Routes>
+      <Footer />
+
   );
 };
 
