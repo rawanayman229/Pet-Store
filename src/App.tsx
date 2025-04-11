@@ -15,7 +15,7 @@ import CategoryPage from "./pages/categoriespage";
 
 const App: React.FC = () => {
   return (
-    <Router basename="/">
+    <BrowserRouter basename="/">
 
       <Navbar />
       <Routes>

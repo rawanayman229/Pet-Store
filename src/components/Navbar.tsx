@@ -9,7 +9,7 @@ const Navbar: React.FC = () => {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
   const [searchVisible, setSearchVisible] = useState(false);
   const searchInputRef = useRef<HTMLDivElement>(null); 
-
+  const [isMenuOpen] = useState(false);
   const toggleSidebar = () => {
     setIsSidebarVisible(!isSidebarVisible);
     if (isSidebarVisible && searchVisible) {
@@ -18,7 +18,9 @@ const Navbar: React.FC = () => {
   };
 
   const toggleSearch = () => {
-    setSearchVisible(!searchVisible);
+    if (isSidebarVisible) {
+        setIsSidebarVisible(false);
+      }    setSearchVisible(!searchVisible);
   };
 
   useEffect(() => {
@@ -60,6 +62,7 @@ const Navbar: React.FC = () => {
               <i className="pi pi-bars"></i>
             </button>
           </div>
+          </div>
 
           {/* Logo - Centered on mobile */}
           <a href="/" className="text-center flex justify-center items-center">
@@ -82,6 +85,14 @@ const Navbar: React.FC = () => {
             <InputText placeholder="Search something here!" />
         </IconField>
 
+        
+        
+    
+
+           {/* Search Icon - Mobile */}
+           <button onClick={toggleSearch} className="sm:hidden text-blue-950 hover:text-blue-500 text-2xl">
+            <i className="pi pi-search"></i>
+          </button>
         </div>
 
         {/* Search Field - Mobile */}
