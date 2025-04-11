@@ -3,9 +3,8 @@ import React from "react";
 const SecondBanner: React.FC = () => {
   return (
     <section
-      className="mt-15 w-full h-auto rounded-xl flex flex-col md:flex-row justify-between items-center px-4 md:px-20 text-center md:text-left"
+      className="mt-15 w-full h-auto rounded-xl sm:bg-[url('/images/banner2.png')] bg-[url('/images/banner2Mob.png')]  flex flex-col md:flex-row justify-between items-center px-4 md:px-20 text-center md:text-left"
       style={{
-        backgroundImage: "url('images/banner2.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
