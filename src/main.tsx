@@ -1,18 +1,14 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css';
-import App from './App.tsx'
-import 'primereact/resources/themes/lara-light-blue/theme.css';
-import 'primereact/resources/primereact.min.css';
-import 'primeicons/primeicons.css';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "./index.css"; // if you use Tailwind or global CSS
+import "primeicons/primeicons.css";
 
-
-
-
-
-
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App /> {/* call lel app */}
-  </StrictMode>,
-)
+const root = ReactDOM.createRoot(
+    document.getElementById("root") as HTMLElement
+);
+root.render(
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>
+);

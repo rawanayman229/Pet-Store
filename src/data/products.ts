@@ -14,7 +14,7 @@ export interface Product {
       name: "Reflex Plus Adult Cat Food Salmon",
       category: "Dog Food",
       size: "385gm",
-      price: "140.000 VND",
+      price: "140.000 $",
       image: "images/product.png",
       offer: "🎁 Free Toy & Free Shaker"
     },
@@ -23,7 +23,7 @@ export interface Product {
       name: "Reflex Plus Adult Cat Food Salmon",
       category: "Cat Food",
       size: "1.5kg",
-      price: "165.000 VND",
+      price: "165.000 $",
       image: "images/product.png",
       offer: "🎁 Free Toy & Free Shaker"
     },
@@ -32,7 +32,7 @@ export interface Product {
       name: "Cat scratch board kitten sisal rope ball",
       size: "385gm",
       category: "Toy",
-      price: "1.100.000 VND",
+      price: "1.100.000 $",
       image: "images/product.png",
       offer: "🎁 Free Cat Food"
     },
@@ -41,7 +41,7 @@ export interface Product {
       name: "Cute Pet Cat Warm Nest",
       size: "1.5kg",
       category: "Toy",
-      price: "410.000 VND",
+      price: "410.000 $",
       image: "images/product.png",
       offer: "🎁 Free Cat Food"
     },
@@ -50,7 +50,7 @@ export interface Product {
       name: "Reflex Plus Adult Cat Food Salmon",
       category: "Dog Food",
       size: "385gm",
-      price: "140.000 VND",
+      price: "140.000 $",
       image: "images/product.png",
       offer: "🎁 Free Toy & Free Shaker"
     },
@@ -59,7 +59,7 @@ export interface Product {
       name: "Reflex Plus Adult Cat Food Salmon",
       category: "Cat Food",
       size: "1.5kg",
-      price: "165.000 VND",
+      price: "165.000 $",
       image: "images/product.png",
       offer: "🎁 Free Toy & Free Shaker"
     },
@@ -68,7 +68,7 @@ export interface Product {
       name: "Cat scratch board kitten sisal rope ball",
       category: "Toy",
       size: "385gm",
-      price: "1.100.000 VND",
+      price: "1.100.000 $",
       image: "images/product.png",
       offer: "🎁 Free Cat Food"
     },
@@ -77,7 +77,7 @@ export interface Product {
       name: "Cute Pet Cat Warm Nest",
       category: "Toy",
       size: "1.5kg",
-      price: "410.000 VND",
+      price: "410.000 $",
       image: "images/product.png",
       offer: "🎁 Free Cat Food"
     }

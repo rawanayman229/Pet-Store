@@ -14,6 +14,8 @@ body {
   margin-bottom: 20px;
 }
 
+
+
 .button-transparent {
   background-color: transparent;
   border: 2px solid #003459;
@@ -31,3 +33,9 @@ body {
 
 }
 
+
+@media (max-width: 767px) {
+  .mt-15 {
+    background-image: url('./images/banner2Mob.png') !important;
+  }
+}

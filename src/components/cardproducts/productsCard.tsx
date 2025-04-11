@@ -15,6 +15,7 @@ const ProductCardSection: React.FC<ProductCardProps> = ({ product }) => {
   };
 
   return (
+
     <div
       className="bg-white rounded-2xl shadow-md p-4 hover:shadow-lg transition duration-300"
     >
@@ -31,11 +32,22 @@ const ProductCardSection: React.FC<ProductCardProps> = ({ product }) => {
 
       <p className="text-sm text-gray-600">
         Product: {product.category} . Size: {product.size}
+
+      
+      <h3 className="text-sm sm:text-base font-bold text-[#00171F] leading-snug mb-1">
+        {product.name}
+      </h3>
+
+     
+
+
+      
+      <p className="text-[#002A48] font-bold text-sm sm:text-lg mt-1">
+        {product.price}
       </p>
 
-      <p className="text-[#002A48] font-bold text-lg mt-2">{product.price}</p>
-
-      <div className="bg-[#FCEED5] text-[#592B00] text-sm font-semibold py-2 px-3 rounded-xl mt-3 inline-block">
+      
+      <div className="bg-[#FCEED5] text-[#002A48] text-xs sm:text-sm font-semibold py-1 px-3 rounded-xl mt-2 inline-block">
         {product.offer}
       </div>
     </div>
