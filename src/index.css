@@ -34,8 +34,3 @@ body {
 }
 
 
-@media (max-width: 767px) {
-  .mt-15 {
-    background-image: url('./images/banner2Mob.png') !important;
-  }
-}
