@@ -31,15 +31,14 @@ const ProductCardSection: React.FC<ProductCardProps> = ({ product }) => {
       </h3>
 
       <p className="text-sm text-gray-600">
-        Product: {product.category} . Size: {product.size}
+        Product: {product.category} . Size: {product.size} </p>
 
       
       <h3 className="text-sm sm:text-base font-bold text-[#00171F] leading-snug mb-1">
         {product.name}
       </h3>
 
-     
-
+  
 
       
       <p className="text-[#002A48] font-bold text-sm sm:text-lg mt-1">
