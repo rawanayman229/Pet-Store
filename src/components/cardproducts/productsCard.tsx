@@ -44,10 +44,12 @@ const ProductCardSection: React.FC<ProductCardProps> = ({ product }) => {
       </p>
 
       
-      <div className="bg-[#FCEED5] text-[#002A48] text-xs sm:text-sm font-semibold py-1 px-3 rounded-xl mt-2 inline-block">
-        {product.offer}
+     
+     <div className="bg-[#FCEED5] text-[#002A48] text-xs sm:text-sm font-semibold py-1 px-3 rounded-xl mt-2 inline-block">
+     offer: "🎁 Free Cat Food"
       </div>
     </div>
+    
   );
 
 };
