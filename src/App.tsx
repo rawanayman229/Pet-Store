@@ -11,6 +11,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ProductDetails from './pages/ProductDetails';
 import Footer from "./components/footer";
 import CategoryPage from "./pages/categoriespage";
+import "primereact/resources/themes/lara-light-blue/theme.css"; // or your chosen theme
+import "primereact/resources/primereact.min.css";
+import "primeicons/primeicons.css";
 
 
 const App: React.FC = () => {

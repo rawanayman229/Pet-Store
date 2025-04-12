@@ -2,7 +2,7 @@
 
 export interface Pet {
     id: string;
-    breed: string;
+    name: string;
     color: string;
     gender: "Male" | "Female";
     age: string;
@@ -13,7 +13,7 @@ export interface Pet {
   export const pets: Pet[] = [
     {
       id: "MO231",
-      breed: "Pomeranian",
+      name: "Pomeranian",
       color: "White",
       gender: "Male",
       age: "02 months",
@@ -22,7 +22,7 @@ export interface Pet {
     },
     {
       id: "MO502",
-      breed: "Poodle Tiny",
+      name: "Poodle Tiny",
       color: "Yellow",
       gender: "Female",
       age: "02 months",
@@ -31,7 +31,7 @@ export interface Pet {
     },
     {
         id: "MO502",
-        breed: "Poodle Tiny",
+        name: "Poodle Tiny",
         color: "Yellow",
         gender: "Female",
         age: "02 months",
@@ -40,7 +40,7 @@ export interface Pet {
       },
       {
         id: "MO502",
-        breed: "Poodle Tiny",
+        name: "Poodle Tiny",
         color: "Yellow",
         gender: "Female",
         age: "02 months",
@@ -49,7 +49,7 @@ export interface Pet {
       },
       {
         id: "MO502",
-        breed: "Poodle Tiny",
+        name: "Poodle Tiny",
         color: "Yellow",
         gender: "Female",
         age: "02 months",
@@ -58,7 +58,7 @@ export interface Pet {
       },
       {
         id: "MO502",
-        breed: "Poodle Tiny",
+        name: "Poodle Tiny",
         color: "Yellow",
         gender: "Female",
         age: "02 months",
@@ -67,7 +67,7 @@ export interface Pet {
       },
       {
         id: "MO502",
-        breed: "Poodle Tiny",
+        name: "Poodle Tiny",
         color: "Yellow",
         gender: "Female",
         age: "02 months",
@@ -76,7 +76,7 @@ export interface Pet {
       },
       {
         id: "MO502",
-        breed: "Poodle Tiny",
+        name: "Poodle Tiny",
         color: "Yellow",
         gender: "Female",
         age: "02 months",

@@ -17,7 +17,7 @@ const KnowledgeCardSection: React.FC<KnowledgeCardProps> = ({ item }) => {
       </div>
       <div className="p-4">
         <span className="inline-block text-xs bg-[#00A7E7] text-white font-medium px-3 py-1 rounded-full mb-3">
-          {item.tag}
+          Pet knowledge
         </span>
         <h3 className="font-semibold text-base mb-1">{item.title}</h3>
         <p className="text-sm text-gray-600">{item.description}</p>

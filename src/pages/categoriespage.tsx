@@ -1,17 +1,50 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PetCardSection from "../components/card/cardGategories";
-import { pets } from "../data/pets";
 import { Disclosure } from "@headlessui/react";
 import { FunnelIcon } from "@heroicons/react/24/outline";
+import axios from "axios";
+import { Pet } from "../types";
+
 
 const colors = ["Red", "Apricot", "Black", "Black & White", "Silver", "Tan"];
 const breeds = ["Small", "Medium", "Large"];
 
 const CategoryPage: React.FC = () => {
+ const [pets, setPets] = useState<Pet[]>([]);
+   const [loading, setLoading] = useState(true);
   const [selectedGender, setSelectedGender] = useState<string[]>([]);
   const [selectedColors, setSelectedColors] = useState<string[]>([]);
   const [selectedBreeds, setSelectedBreeds] = useState<string[]>([]);
   const [priceRange, setPriceRange] = useState({ min: "", max: "" });
+
+  const [currentPage, setCurrentPage] = useState(1);
+const petsPerPage = 6; // Or whatever number you want per page
+
+const indexOfLastPet = currentPage * petsPerPage;
+const indexOfFirstPet = indexOfLastPet - petsPerPage;
+const currentPets = pets.slice(indexOfFirstPet, indexOfLastPet);
+
+const totalPages = Math.ceil(pets.length / petsPerPage);
+
+useEffect(() => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}, [currentPage]);
+  // Fetch pets data from the API
+  useEffect(() => {
+    const fetchPets = async () => {
+      try {
+        const response = await axios.get(`https://round-3-pet-store.digital-vision-solutions.com/api/pets`); 
+        console.log("Pets response:", response.data);
+        setPets(response.data.data);
+      } catch (error) {
+        console.error("Error fetching pets:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPets();
+  }, []);
 
   const toggleFilter = (value: string, setState: React.Dispatch<React.SetStateAction<string[]>>) => {
     setState((prev) =>
@@ -23,8 +56,6 @@ const CategoryPage: React.FC = () => {
     const { name, value } = e.target;
     setPriceRange((prev) => ({ ...prev, [name]: value }));
   };
-
-
 
   const renderFilters = () => (
     <>
@@ -82,7 +113,7 @@ const CategoryPage: React.FC = () => {
           />
         </div>
       </div>
-
+ 
       {/* Breed */}
       <div>
         <h4 className="font-semibold text-gray-700 mb-2">Breed</h4>
@@ -107,26 +138,39 @@ const CategoryPage: React.FC = () => {
 
       {/* Banner */}
       <section
-        className="relative bg-no-repeat bg-cover bg-center rounded-xl overflow-hidden mb-10 flex flex-col md:flex-row items-center justify-between p-6"
-        style={{ backgroundImage: "url('images/banner1.png')" }}
-      >
-        <div className="max-w-lg text-center md:text-left z-10 text-white">
-          <h1 className="text-3xl md:text-4xl font-bold">One More Friend</h1>
-          <h2 className="text-2xl md:text-3xl font-semibold mt-2">Thousands More Fun!</h2>
-          <p className="text-sm md:text-base mt-4">
-            Having a pet means you have more joy, a new friend, a happy person who will always be with you to have fun. We have 200+ different pets that can meet your needs!
-          </p>
-          <div className="flex mt-6 gap-4 justify-center md:justify-start">
-            <button className="bg-transparent border border-white text-white px-6 py-3 rounded-full hover:bg-gray-900 flex items-center gap-2 cursor-pointer">
-              View Intro <img src="/images/Play_Circle.png" alt="Arrow" className="inline-block ml-2" />
-            </button>
-            <button className="bg-white text-black px-6 py-2 rounded-full hover:bg-transparent hover:text-gray-800 hover:border hover:border-gray-800 transition">
-              Explore Now
-            </button>
-          </div>
-        </div>
-        <img src="/images/groupDogs.png" alt="Dogs" className="w-full md:w-[50%] object-contain" />
-      </section>
+  className="relative bg-no-repeat bg-cover bg-center rounded-xl overflow-hidden mb-10   flex flex-col-reverse md:flex-row items-end md:items-center justify-between h-[470px] md:h-[400px]"
+  style={{ backgroundImage: "url('/images/Group22.png')" }}
+>
+  {/* Text Section */}
+  <div className="z-10 text-center md:text-left text-white md:text-white max-w-lg w-full">
+    <h1 className="text-3xl md:text-4xl font-bold">One More Friend</h1>
+    <h2 className="text-2xl md:text-3xl font-semibold mt-2">Thousands More Fun!</h2>
+    <p className="text-sm md:text-base mt-4">
+      Having a pet means you have more joy, a new friend, a happy person who will always be with you to have fun.
+      We have 200+ different pets that can meet your needs!
+    </p>
+    <div className="flex mt-6 gap-4 justify-center md:justify-start ">
+      <button className="bg-transparent border border-white text-white px-6 py-3 rounded-full hover:bg-gray-900 flex items-center gap-2 cursor-pointer">
+        View Intro <img src="/images/Play_Circle.png" alt="Play" className="inline-block ml-2" />
+      </button>
+      <button className="bg-white text-black px-6 py-2 rounded-full hover:bg-transparent hover:text-gray-800 hover:border hover:border-gray-800 transition">
+        Explore Now
+      </button>
+    </div>
+  </div>
+
+  {/* Image Section */}
+  <div className="relative w-full md:w-[50%] flex justify-center md:justify-end items-end md:items-center mt-4 md:mt-0 flex-col-reversed z-0">
+    <img
+      src="/images/groupDogs.png"
+      alt="Dogs"
+      className="w-full max-h-[180px] md:max-h-[300px] object-contain md:object-cover"
+    />
+  </div>
+</section>
+
+
+
 
       {/* Mobile: Sort + Filter */}
       <div className="flex justify-between items-center mb-6 md:hidden">
@@ -169,20 +213,64 @@ const CategoryPage: React.FC = () => {
           </div>
 
           {/* Pet Grid */}
-          <div className="grid grid-cols-1 min-[375px]:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-6 mb-6">
-            {pets.map((pet, idx) => (
+         
+       
+       
+          {loading ? (
+          <p className="text-center">Loading pets...</p>
+        ) : (
+          <div className="grid grid-cols-1 min-[375px]:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 mb-6">
+            {currentPets.map((pet, idx) => (
               <PetCardSection key={idx} pet={pet} />
             ))}
           </div>
+        )}
+        
+
 
           {/* Pagination */}
-          <div className="flex justify-center mt-10 gap-2">
-            <button className="w-8 h-8 flex items-center justify-center border rounded text-sm text-gray-600">1</button>
-            <button className="w-8 h-8 flex items-center justify-center border rounded text-sm text-gray-600">2</button>
-            <button className="w-8 h-8 flex items-center justify-center border rounded text-sm text-gray-600">3</button>
-            <span className="px-2 text-gray-600">...</span>
-            <button className="w-8 h-8 flex items-center justify-center border rounded text-sm text-gray-600">28</button>
-          </div>
+          <div className="flex justify-center mt-10 gap-2 flex-wrap items-center">
+  {/* Previous Arrow */}
+  <button
+    className="w-8 h-8 flex items-center justify-center  text-sm text-gray-600 disabled:opacity-50"
+    onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+    disabled={currentPage === 1}
+  >
+    ←
+  </button>
+
+  {/* Page Numbers */}
+  {[1, 2, currentPage > 3 ? "..." : null, currentPage, currentPage < totalPages - 2 ? "..." : null, totalPages]
+    .filter((value, index, self) => value !== null && self.indexOf(value) === index)
+    .map((page, idx) =>
+      page === "..." ? (
+        <span key={idx} className="px-2 text-gray-600">...</span>
+      ) : (
+        <button
+          key={idx}
+          onClick={() => setCurrentPage(Number(page))}
+          className={`w-8 h-8 flex items-center justify-center  rounded text-sm ${
+            currentPage === page
+              ? "bg-[#003459] text-white"
+              : "text-gray-600"
+          }`}
+        >
+          {page}
+        </button>
+      )
+    )}
+
+  {/* Next Arrow */}
+  <button
+    className="w-8 h-8 flex items-center justify-center  text-sm text-gray-600 disabled:opacity-50"
+    onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+    disabled={currentPage === totalPages}
+  >
+    →
+  </button>
+</div>
+
+
         </div>
       </div>
     </div>
@@ -190,3 +278,5 @@ const CategoryPage: React.FC = () => {
 };
 
 export default CategoryPage;
+
+

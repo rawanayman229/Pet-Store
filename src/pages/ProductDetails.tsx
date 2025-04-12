@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Carousel } from 'primereact/carousel';
 import { Galleria } from 'primereact/galleria';
-import { products } from "../data/products";
 import ProductCardSection from "../components/cardproducts/productsCard";
+import axios from "axios";
+import { Product } from "./../types"; 
+
 
 
 
@@ -27,54 +29,66 @@ interface Customer {
   image: string;
 }
 
+
+
 const ProductDetails: React.FC = () => {
 const [product, setProduct] = useState<ProductData | null>(null);
 const [customers, setCustomers] = useState<Customer[]>([]);
+const [productList, setProductList] = useState<Product[]>([]);
+const [loading, setLoading] = useState(true);
 
 useEffect(() => {
-    // Simulate API call
-    const fetchData = async () => {
-      const data: ProductData = {
-        images: [
-          "images/dogdetails.png",
-          "images/dogdetails2.png", 
-          "images/dogdetails3.png",
-      "images/dogdetails4.png",
-        ],
-        name: "Shiba Inu Sepia",
-        price: "34.000.000 VND",
-        gender: "Female",
-        age: "2 Months",
-        size: "Small",
-        color: "Apricot & Tan",
-        vaccinated: "Yes",
-        dewormed: "Yes",
-        cert: "Yes (MKA)",
-        microchip: "Yes",
-        location: "Vietnam",
-        publishedDate: "12-Oct-2022",
-        additionalInfo: "Pure breed Shih Tzu.\nGood body structure.",
-    };
-    setProduct(data);
-    };
+  const fetchProduct = async () => {
+    try {
+      const response = await axios.get(
+        "https://round-3-pet-store.digital-vision-solutions.com/api/products"
+      );
+      console.log("Products response:", response.data);
+      const firstProduct = response.data.data[0]; // just for demo
+      setProduct(firstProduct);
+    } catch (error) {
+      console.error("Error fetching product:", error);
+    }
+  };
 
-    fetchData();
+  fetchProduct();
 }, []);
 
 
 
+
 useEffect(() => {
-  const customerData: Customer[] = [
-    { image: "images/customer1.png" },
-    { image: "images/customer2.png"},
-    { image: "images/customer3.png"},
-    { image: "images/customer4.png"},
-    { image: "images/customer1.png" },
-    { image: "images/customer2.png"},
-    { image: "images/customer3.png"},
-    { image: "images/customer4.png"},
-  ];
-  setCustomers(customerData);
+  const fetchCustomers = async () => {
+    try {
+      const response = await axios.get(
+        "https://round-3-pet-store.digital-vision-solutions.com/api/customers"
+      );
+      console.log("Customers response:", response.data);
+      setCustomers(response.data.data);
+    } catch (error) {
+      console.error("Error fetching customers:", error);
+    }
+  };
+
+  fetchCustomers();
+}, []);
+
+useEffect(() => {
+  const fetchProducts = async () => {
+    try {
+      const response = await axios.get(
+        "https://round-3-pet-store.digital-vision-solutions.com/api/products"
+      );
+      console.log("Products response:", response.data);
+      setProductList(response.data.data); 
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchProducts();
 }, []);
 
 
@@ -152,6 +166,8 @@ return (
             <>
             <h2 className="text-2xl font-bold text-black mb-4">{product.name}</h2>
             <p className="text-xl text-[#002A48] font-semibold mb-4">{product.price}</p>
+
+          
 
  {/* Buttons */}
 <div className="flex flex-row sm:flex-row gap-4 w-full mt-6 ">
@@ -247,13 +263,28 @@ return (
     </div>
 
     {/* Cards Section */}
-    <div className="mt-10 p-4">
-      <h5 className="px-15">Whats new?</h5>
-    <h2 className="text-[#00171F] text-2xl font-extrabold px-15">See more puppies</h2>
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-12">
-        {products.map((product, idx) => (
-          <ProductCardSection key={idx} product={product} /> 
-        ))}
+    <div className="pt-[2px] row-span-1 min-h-screen">
+      <div className="p-6 max-w-7xl mx-auto">
+        <div className="flex justify-between items-center mb-6">
+          <div>
+            <p className="text-sm text-black">
+              Hard to choose right products for your pets?
+            </p>
+            <h2 className="text-2xl text-[#003459] font-bold">Our Products</h2>
+          </div>
+
+        </div>
+
+        {loading ? (
+          <p className="text-center">Loading products...</p>
+        ) : (
+          <div className="grid grid-cols-1 min-[375px]:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 mb-6">
+            {productList.map((product, idx) => (
+              <ProductCardSection key={idx} product={product} />
+            ))}
+          </div>
+        )}
+
       </div>
     </div>
 
