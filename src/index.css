@@ -32,15 +32,3 @@ body {
   color: white;
 
 }
-
-@media (max-width: 767px) {
-  .mt-20 { 
-    background-image: url('images/bannerMob.png') !important;
-  }
-}
-
-@media (max-width: 767px) {
-  .mt-15 {
-    background-image: url('images/banner2Mob.png') !important;
-  }
-}

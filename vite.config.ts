@@ -9,5 +9,5 @@ export default defineConfig({
 
   plugins: [react(), tailwindcss(),],
 
-  base: "/"
+  base: "/round-3-pet-store-front/"
 })

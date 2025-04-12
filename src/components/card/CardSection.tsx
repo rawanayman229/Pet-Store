@@ -1,8 +1,12 @@
+
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+
+
 import PetCardSection from "./cardGategories";
 import { Pet } from "../../data/pets";
 import { useNavigate } from "react-router-dom";
+
 
 
 const PetGategories: React.FC = () => {
@@ -73,3 +77,4 @@ const PetGategories: React.FC = () => {
 };
 
 export default PetGategories;
+

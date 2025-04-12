@@ -18,7 +18,7 @@ import "primeicons/primeicons.css";
 
 const App: React.FC = () => {
   return (
-    <BrowserRouter basename="/">
+    <BrowserRouter basename="/round-3-pet-store-front/">
 
       <Navbar />
       <Routes>

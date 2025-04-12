@@ -51,6 +51,7 @@ const ProductsSection: React.FC = () => {
           >
             View more →
           </button>
+
         </div>
 
         {loading ? (
@@ -71,6 +72,7 @@ const ProductsSection: React.FC = () => {
         View more →
       </button>
     </div>
+
       </div>
     </div>
   );
