@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 
 const ProductsSection: React.FC = () => {
 
- const navigate = useNavigate();
+const navigate = useNavigate();
   const handleViewMoreClick = () => {
     navigate("/productDetails"); 
   };
@@ -47,7 +47,7 @@ const ProductsSection: React.FC = () => {
             <h2 className="text-2xl text-[#003459] font-bold">Our Products</h2>
           </div>
           <button className="hidden sm:inline-block text-[#003459] font-medium border border-[#003459] rounded-full px-4 py-2 hover:bg-[#003459] hover:text-white transition"
-           onClick={handleViewMoreClick}
+          onClick={handleViewMoreClick}
           >
             View more →
           </button>

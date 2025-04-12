@@ -66,16 +66,13 @@ const Navbar: React.FC = () => {
                     </div>
 
                     {/* Logo - Centered on mobile */}
-                    <a
-                        href="/"
-                        className="text-center flex justify-center items-center"
-                    >
-                        <img
-                            src="images/logo.png"
-                            alt="Logo"
-                            className="h-10 mx-auto max-w-full"
-                        />
-                    </a>
+<Link to="/" className="text-center flex justify-center items-center">
+    <img
+        src="images/logo.png"
+        alt="Logo"
+        className="h-10 mx-auto max-w-full"
+    />
+</Link>
 
                     {/* Search Icon - Mobile (right side) */}
                     <div className="sm:hidden flex-grow text-right">
@@ -99,7 +96,7 @@ const Navbar: React.FC = () => {
                         </li>
                         <li>
                             <Link
-                                to="/category"
+                                to="/categoriespage"
                                 className="hover:text-blue-500 transition-all duration-400"
                             >
                                 Category
@@ -124,15 +121,16 @@ const Navbar: React.FC = () => {
                     </ul>
 
                     {/* Search - Desktop Only */}
-                    <div className="hidden bg-white !rounded-full border px-8 py-2 shadow-sm  md:flex items-center space-x-2">
-                        <IconField iconPosition="left">
-                            <InputIcon className="pi pi-search p-2" />
-                            <InputText
-                                placeholder="Search something here!"
-                                className="focus:outline-none "
-                            />
-                        </IconField>
-                    </div>
+<div className="hidden md:flex  bg-white  rounded-full px-8 py-4 shadow-sm">
+<IconField iconPosition="left" className="ml-0">
+    <InputIcon className="pi pi-search" />
+    <InputText
+    placeholder="Search something here!"
+    className="focus:outline-none rounded-full ml-10"
+    />
+</IconField>
+</div>
+
 
                     {/* Join Button - Desktop Only */}
                     <a
@@ -185,7 +183,7 @@ const Navbar: React.FC = () => {
                         Home
                     </Link>
                     <Link
-                        to="/category"
+                        to="/categoriespage"
                         className="text-lg font-semibold text-blue-950 hover:text-blue-500"
                     >
                         Category
