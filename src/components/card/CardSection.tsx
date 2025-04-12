@@ -1,6 +1,7 @@
 import React from "react";
-import { pets } from "../../data/pets";
+import { pets } from "../../data/pets"; 
 import PetCardSection from "./cardGategories";
+
 
 const PetGategories: React.FC = () => {
   return (
@@ -42,3 +43,4 @@ const PetGategories: React.FC = () => {
 };
 
 export default PetGategories;
+

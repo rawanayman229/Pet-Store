@@ -3,13 +3,13 @@ import React from "react";
 const FirstBanner: React.FC = () => {
   return (
     <section
-      className="mt-20 w-full h-auto rounded-xl sm:bg-[url('/images/banner1.png')] bg-[url('/images/banner2Mob.png')] flex flex-col md:flex-row justify-between items-center px-4 md:px-20 text-right md:text-right"
-      style={{
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
+    className="mt-20 w-full h-auto rounded-xl bg-[url('/images/bannerMob.png')]  sm:bg-[url('/images/banner1.png')] flex flex-col md:flex-row justify-between items-center px-4 md:px-20 text-right md:text-right"
+    style={{
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+    }}
+  >
       {/* Left Content (Hidden on small screens) */}
       <img
         src="images/bannerPhoto.png"

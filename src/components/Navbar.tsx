@@ -124,12 +124,12 @@ const Navbar: React.FC = () => {
                     </ul>
 
                     {/* Search - Desktop Only */}
-                    <div className="hidden md:flex items-center space-x-2">
+                    <div className="hidden bg-white !rounded-full border px-8 py-2 shadow-sm  md:flex items-center space-x-2">
                         <IconField iconPosition="left">
-                            <InputIcon className="pi pi-search" />
+                            <InputIcon className="pi pi-search p-2" />
                             <InputText
                                 placeholder="Search something here!"
-                                className="!rounded-full bg-white border px-4 py-2 shadow-sm focus:outline-none"
+                                className="focus:outline-none "
                             />
                         </IconField>
                     </div>
