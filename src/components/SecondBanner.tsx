@@ -1,9 +1,10 @@
 import React from "react";
 
 const SecondBanner: React.FC = () => {
+
   return (
     <section
-      className="mt-15 w-full h-auto rounded-xl bg-[url('/images/banner2Mob.png')]  sm:bg-[url('/images/banner2.png')] flex flex-col md:flex-row justify-between items-center px-4 md:px-20 text-center md:text-left"
+      className="mt-15 w-full h-auto rounded-xl sm:bg-[url('/images/banner2.png')] bg-[url('/images/banner2Mob.png')]  flex flex-col md:flex-row justify-between items-center px-4 md:px-20 text-center md:text-left"
       style={{
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -18,7 +19,6 @@ const SecondBanner: React.FC = () => {
           </h1>
           <img src="images/paw.png" alt="Dog Paw" width={50} height={50} />
         </div>
-
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-950 mt-5">
                     We need help. so do they.
                 </h2>

@@ -19,6 +19,7 @@ const FirstBanner: React.FC = () => {
         className="mt-10 -mb-0 md:block hidden"
       />
 
+
             {/* Right Content (Order changed on small screens) */}
             <div className="text-white mt-6 md:mt-0 sm:text-center sm:justify-center sm:items-center md:text-right w-full md:w-auto">
                 <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-blue-950">

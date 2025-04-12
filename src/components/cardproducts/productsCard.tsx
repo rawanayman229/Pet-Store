@@ -38,8 +38,6 @@ const ProductCardSection: React.FC<ProductCardProps> = ({ product }) => {
         {product.name}
       </h3>
 
-  
-
       
       <p className="text-[#002A48] font-bold text-sm sm:text-lg mt-1">
         {product.price}
