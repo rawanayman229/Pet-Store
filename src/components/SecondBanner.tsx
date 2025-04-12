@@ -1,30 +1,24 @@
 import React from "react";
 
 const SecondBanner: React.FC = () => {
-    return (
-        <section
-            className="mt-15 w-full h-auto rounded-xl flex flex-col md:flex-row justify-between items-center px-4 md:px-20 text-center md:text-left"
-            style={{
-                backgroundImage: "url('./images/banner2.png')",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-            }}
-        >
-            {/* Left Content */}
-            <div className="text-white mt-6 md:mt-0 justify-center items-center sm:justify-center md:justify-left text-left">
-                <div className="flex gap-4">
-                    <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-blue-950">
-                        Adoption
-                    </h1>
-                    <img
-                        src="./images/paw.png"
-                        alt="Dog Paw"
-                        width={50}
-                        height={50}
-                    />
-                </div>
 
+  return (
+    <section
+      className="mt-15 w-full h-auto rounded-xl sm:bg-[url('/images/banner2.png')] bg-[url('/images/banner2Mob.png')]  flex flex-col md:flex-row justify-between items-center px-4 md:px-20 text-center md:text-left"
+      style={{
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      {/* Left Content */}
+      <div className="text-white mt-6 md:mt-0 justify-center items-center sm:justify-center md:justify-left text-left">
+        <div className="flex gap-4">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-blue-950">
+            Adoption
+          </h1>
+          <img src="images/paw.png" alt="Dog Paw" width={50} height={50} />
+        </div>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-950 mt-5">
                     We need help. so do they.
                 </h2>

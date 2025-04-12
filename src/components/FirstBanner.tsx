@@ -1,24 +1,24 @@
 import React from "react";
 
 const FirstBanner: React.FC = () => {
-    return (
-        <section
-            className="mt-20 w-full h-auto rounded-xl flex flex-col md:flex-row justify-between items-center px-4 md:px-20 text-right md:text-right"
-            style={{
-                backgroundImage: "url('./images/banner1.png')",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-            }}
-        >
-            {/* Left Content (Hidden on small screens) */}
-            <img
-                src="./images/bannerPhoto.png"
-                alt="a girl holds dog"
-                width={500}
-                height={500}
-                className="mt-10 -mb-0 md:block hidden"
-            />
+  return (
+    <section
+      className="mt-20 w-full h-auto rounded-xl sm:bg-[url('/images/banner1.png')] bg-[url('/images/banner2Mob.png')] flex flex-col md:flex-row justify-between items-center px-4 md:px-20 text-right md:text-right"
+      style={{
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      {/* Left Content (Hidden on small screens) */}
+      <img
+        src="images/bannerPhoto.png"
+        alt="a girl holds dog"
+        width={500}
+        height={500}
+        className="mt-10 -mb-0 md:block hidden"
+      />
+
 
             {/* Right Content (Order changed on small screens) */}
             <div className="text-white mt-6 md:mt-0 sm:text-center sm:justify-center sm:items-center md:text-right w-full md:w-auto">
