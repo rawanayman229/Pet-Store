@@ -32,7 +32,7 @@ export interface Pet {
     id: number;
     title: string;
     description: string;
-    image_url: [0];
+    image_url: string[];
     tag: string;
   }
 
