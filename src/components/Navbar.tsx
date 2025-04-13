@@ -4,13 +4,28 @@ import { IconField } from "primereact/iconfield";
 import { InputIcon } from "primereact/inputicon";
 import { Link } from "react-router-dom";
 
+interface Product {
+    id: number;
+    name: string;
+    description: string;
+    image: string;
+    price: string;
+    category: string;
+    offer: string;
+}
+
+interface ProductResponse {
+    data: Product[];
+}
+
+
 const Navbar: React.FC = () => {
     const [scrolled, setScrolled] = useState(false);
     const [isSidebarVisible, setIsSidebarVisible] = useState(false);
     const [searchVisible, setSearchVisible] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
-    const [products, setProducts] = useState<any[]>([]);
-    const [searchResults, setSearchResults] = useState<any[]>([]);
+    const [products, setProducts] = useState<Product[]>([]);
+    const [searchResults, setSearchResults] = useState<Product[]>([]);
 
     const searchInputRef = useRef<HTMLDivElement>(null);
     const searchResultsRef = useRef<HTMLDivElement>(null);
@@ -27,7 +42,7 @@ const Navbar: React.FC = () => {
     useEffect(() => {
         fetch("https://round-3-pet-store.digital-vision-solutions.com/api/products")
             .then(res => res.json())
-            .then(data => setProducts(data));
+            .then((data: ProductResponse) => setProducts(data.data));
     }, []);
 
     useEffect(() => {
@@ -56,7 +71,7 @@ const Navbar: React.FC = () => {
 
     const handleSearchKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === "Enter") {
-            const found = products.data?.filter((product: any) =>
+            const found = products?.filter((product) =>
                 product.name.toLowerCase().includes(searchQuery.toLowerCase())
             );
             setSearchResults(found || []);
