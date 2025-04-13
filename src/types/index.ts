@@ -7,7 +7,7 @@ export interface Pet {
     is_popular: boolean;
     age: string;
     price: string;
-    image: string;
+    images: string[];
   }
   
   export interface Product {
@@ -16,8 +16,13 @@ export interface Pet {
     description: string;
     image: string;
     price: string;
-    category: string;  
+    category: string; 
+    size: string; 
     offer: "🎁 Free Cat Food"    
+  }
+
+  export interface Customer {
+    image: string;
   }
 
  
@@ -27,7 +32,7 @@ export interface Pet {
     id: number;
     title: string;
     description: string;
-    image: string;
+    image_url: [0];
     tag: string;
   }
 
@@ -47,7 +52,8 @@ export interface Pet {
     additionalInfo: string;
     id: string;
     category: string;
-    image: string;
+    imags: [0];
+    is_popular: string;
     offer: string;
   }
   

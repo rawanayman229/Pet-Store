@@ -4,7 +4,7 @@ import axios from "axios";
 
 
 import PetCardSection from "./cardGategories";
-import { Pet } from "../../data/pets";
+import { Pet } from "../../types";
 import { useNavigate } from "react-router-dom";
 
 
