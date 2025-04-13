@@ -99,7 +99,7 @@ const Navbar: React.FC = () => {
                         </li>
                         <li>
                             <Link
-                                to="/category"
+                                to="/categoriespage"
                                 className="hover:text-blue-500 transition-all duration-400"
                             >
                                 Category
@@ -185,7 +185,7 @@ const Navbar: React.FC = () => {
                         Home
                     </Link>
                     <Link
-                        to="/category"
+                        to="/categoriespage"
                         className="text-lg font-semibold text-blue-950 hover:text-blue-500"
                     >
                         Category

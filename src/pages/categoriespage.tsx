@@ -8,6 +8,15 @@ import { Pet } from "../types";
 
 const colors = ["Red", "Apricot", "Black", "Black & White", "Silver", "Tan"];
 const breeds = ["Small", "Medium", "Large"];
+const colorMap: Record<string, string> = {
+  "Red": "#FF0000",
+  "Black": "#000000",
+  "Black & White": "linear-gradient(to right, black 50%, white 50%)",
+  "Apricot": "#FFBF00",
+  "Silver": "#C0C0C0",
+  "Tan": "#D2B48C",
+};
+
 
 const CategoryPage: React.FC = () => {
  const [pets, setPets] = useState<Pet[]>([]);
@@ -75,21 +84,27 @@ useEffect(() => {
         ))}
       </div>
 
-      {/* Color */}
-      <div className="mb-6">
-        <h4 className="font-semibold text-gray-700 mb-2">Color</h4>
-        {colors.map((color) => (
-          <label key={color} className="block">
-            <input
-              type="checkbox"
-              className="mr-2"
-              checked={selectedColors.includes(color)}
-              onChange={() => toggleFilter(color, setSelectedColors)}
-            />
-            {color}
-          </label>
-        ))}
-      </div>
+     {/* Color */}
+<div className="mb-6">
+  <h4 className="font-semibold text-gray-700 mb-2">Color</h4>
+  {colors.map((color) => (
+    <label key={color} className="flex items-center gap-2 mb-2 cursor-pointer">
+      <input
+        type="checkbox"
+        className="accent-[#003459]"
+        checked={selectedColors.includes(color)}
+        onChange={() => toggleFilter(color, setSelectedColors)}
+      />
+      {/* Surface color box */}
+      <div
+        className="w-4 h-4 rounded-full border"
+        style={{ background: colorMap[color] }}
+      />
+      <span className="text-sm text-gray-800">{color}</span>
+    </label>
+  ))}
+</div>
+
 
       {/* Price */}
       <div className="mb-6">
@@ -138,36 +153,69 @@ useEffect(() => {
 
       {/* Banner */}
       <section
-  className="relative bg-no-repeat bg-cover bg-center rounded-xl overflow-hidden mb-10   flex flex-col-reverse md:flex-row items-end md:items-center justify-between h-[470px] md:h-[400px]"
-  style={{ backgroundImage: "url('/images/Group22.png')" }}
->
-  {/* Text Section */}
-  <div className="z-10 text-center md:text-left text-white md:text-white max-w-lg w-full">
-    <h1 className="text-3xl md:text-4xl font-bold">One More Friend</h1>
-    <h2 className="text-2xl md:text-3xl font-semibold mt-2">Thousands More Fun!</h2>
-    <p className="text-sm md:text-base mt-4">
-      Having a pet means you have more joy, a new friend, a happy person who will always be with you to have fun.
-      We have 200+ different pets that can meet your needs!
-    </p>
-    <div className="flex mt-6 gap-4 justify-center md:justify-start ">
-      <button className="bg-transparent border border-white text-white px-6 py-3 rounded-full hover:bg-gray-900 flex items-center gap-2 cursor-pointer">
-        View Intro <img src="/images/Play_Circle.png" alt="Play" className="inline-block ml-2" />
-      </button>
-      <button className="bg-white text-black px-6 py-2 rounded-full hover:bg-transparent hover:text-gray-800 hover:border hover:border-gray-800 transition">
-        Explore Now
-      </button>
-    </div>
-  </div>
+    className="mt-0 pt-20 w-full h-auto rounded-xl bg-[url('/images/hero.png')]  sm:bg-[url('/images/Group22.png')] flex flex-col md:flex-row justify-between items-center px-4 md:px-20 text-right md:text-right  bg-cover bg-center   rounded-xl flex flex-col md:flex-row justify-between items-center px-4 md:px-20 text-center md:text-left mb-10"
+    style={{
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+    }}
+  >
+      {/* Left Content (Hidden on small screens) */}
+      <img
+        src="images/groupDogs.png"
+        alt="dogs"
+        width={700}
+        height={800}
+        className="mt-10 -mb-0 md:block hidden"
+      />
 
-  {/* Image Section */}
-  <div className="relative w-full md:w-[50%] flex justify-center md:justify-end items-end md:items-center mt-4 md:mt-0 flex-col-reversed z-0">
-    <img
-      src="/images/groupDogs.png"
-      alt="Dogs"
-      className="w-full max-h-[180px] md:max-h-[300px] object-contain md:object-cover"
-    />
-  </div>
-</section>
+
+            {/* Right Content (Order changed on small screens) */}
+            <div className="text-white mt-6 md:mt-0 sm:text-center sm:justify-center sm:items-center md:text-right w-full md:w-auto">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-blue-900 md:text-white">
+  One More Friend
+</h1>
+<h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-900 md:text-white mt-3">
+  Thousands More Fun!
+</h2>
+<p className="text-sm sm:text-base md:text-lg mt-4 text-blue-900 md:text-white max-w-xl mx-auto md:mx-0">
+  Having a pet means you have more joy, a new friend, a happy
+  <br />
+  person who will always be with you to have fun. We have 200+
+  <br />
+  different pets that can meet your needs!
+</p>
+
+
+                {/* Buttons */}
+                <div className="flex flex-row justify-end sm:flex-row gap-4 w-full mt-6 p ">
+                <button
+                        className="bg-transparent border border-gray-900 text-gray-900 font-semibold transition-all duration-400 
+                    px-6 py-3 rounded-full hover:bg-gray-900 hover:text-white justify-center flex items-center gap-2 cursor-pointer"
+                    >
+                        View Intro
+                        <i className="pi pi-play-circle"></i>
+                    </button>
+
+                    <button
+                        className="bg-gray-900 text-white px-6 py-3 rounded-full hover:bg-transparent hover:border
+                    hover:border-gray-900 hover:text-black transition-all duration-400  cursor-pointer"
+                    >
+                        Explore Now
+                    </button>
+
+                </div>
+            </div>
+
+            
+
+            {/* Image for small screens (appears below the text) */}
+            <img
+                src="./images/groupDogs.png"
+                alt="dogs"
+                className="mt-8 sm:order-1 md:hidden block w-full max-w-md mx-auto"
+            />
+        </section>
 
 
 
