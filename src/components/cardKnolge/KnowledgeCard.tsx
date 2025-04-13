@@ -4,7 +4,7 @@ interface KnowledgeCardProps {
   item: {
     title: string;
     description: string;
-    image_url: string;
+    image_url: "https://round-3-pet-store.digital-vision-solutions.com/storage/blogs/blog1.jpg";
     tag: string;
   };
 }
