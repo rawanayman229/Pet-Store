@@ -178,7 +178,7 @@ useEffect(() => {
 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-900 md:text-white mt-3">
   Thousands More Fun!
 </h2>
-<p className="text-sm sm:text-base md:text-lg mt-4 text-blue-900 md:text-white max-w-xl mx-auto md:mx-0">
+<p className="text-sm sm:text-base  mt-4 text-blue-900 md:text-white max-w-xl mx-auto md:mx-0">
   Having a pet means you have more joy, a new friend, a happy
   <br />
   person who will always be with you to have fun. We have 200+
@@ -190,16 +190,16 @@ useEffect(() => {
                 {/* Buttons */}
                 <div className="flex flex-row justify-end sm:flex-row gap-4 w-full mt-6 p ">
                 <button
-                        className="bg-transparent border border-gray-900 text-gray-900 font-semibold transition-all duration-400 
-                    px-6 py-3 rounded-full hover:bg-gray-900 hover:text-white justify-center flex items-center gap-2 cursor-pointer"
+                        className="bg-transparent border border-blue-900 md:border-white text-blue-900 md:text-white   
+                    px-6 py-3 rounded-full  justify-center flex items-center gap-2 cursor-pointer"
                     >
                         View Intro
                         <i className="pi pi-play-circle"></i>
                     </button>
 
                     <button
-                        className="bg-gray-900 text-white px-6 py-3 rounded-full hover:bg-transparent hover:border
-                    hover:border-gray-900 hover:text-black transition-all duration-400  cursor-pointer"
+                        className="bg-blue-900 md:bg-white text-white md:text-blue-900  text-blue-900 px-6 py-3 rounded-full 
+                    hover:border-gray-900   cursor-pointer"
                     >
                         Explore Now
                     </button>
@@ -221,16 +221,17 @@ useEffect(() => {
 
 
       {/* Mobile: Sort + Filter */}
+      <div className="flex flex-col gap-4 mb-6 md:hidden">
       <div className="flex justify-between items-center mb-6 md:hidden">
-        <select className="border rounded-full px-3 py-1 text-sm">
+        <select className="border rounded-full border-gray-300 px-3 py-1 text-sm">
           <option>Sort by: Popular</option>
         </select>
 
         <Disclosure>
           {() => (
             <>
-              <Disclosure.Button className="flex items-center gap-2 px-4 py-2 border rounded-full text-sm font-medium text-gray-700 hover:bg-gray-100">
-                <FunnelIcon className="w-4 h-4" />
+              <Disclosure.Button className="flex items-center gap-2 px-4 py-2  text-sm font-bold text-gray-700 hover:bg-gray-100">
+                <FunnelIcon className="w-4 h-4 font-bold" />
                 Filter
               </Disclosure.Button>
               <Disclosure.Panel className="mt-4 bg-gray-50 p-4 rounded-lg shadow-sm w-full">
@@ -240,6 +241,13 @@ useEffect(() => {
           )}
         </Disclosure>
       </div>
+      
+
+       {/* Mobile: Small Dogs Title */}
+  <h2 className="text-lg font-bold text-[#003459] ">
+    Small Dogs <sub><span className="text-gray-500 font-medium">{pets.length} puppies</span></sub>
+  </h2>
+</div>
 
       {/* Main Content */}
       <div className="flex flex-col md:flex-row gap-10">
@@ -253,9 +261,10 @@ useEffect(() => {
         <div className="w-full md:w-3/4">
           <div className="hidden md:flex justify-between items-center mb-6">
             <h2 className="text-xl font-bold text-[#003459]">
-              Small Dog <sub><span className="text-gray-500 font-medium">{pets.length} puppies</span></sub>
+              Small Dog <sub><span className=" text-gray-500 font-medium">{pets.length} puppies</span></sub>
             </h2>
-            <select className="border rounded-full px-3 py-1 text-sm">
+            <select className="border rounded-full border-gray-300 px-3 py-1 text-sm"
+            >
               <option>Sort by: Popular</option>
             </select>
           </div>
