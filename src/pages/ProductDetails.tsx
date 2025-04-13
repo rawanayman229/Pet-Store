@@ -31,6 +31,8 @@ interface Customer {
 
 
 
+
+
 const ProductDetails: React.FC = () => {
 const [product, setProduct] = useState<ProductData | null>(null);
 const [customers, setCustomers] = useState<Customer[]>([]);
@@ -61,7 +63,7 @@ useEffect(() => {
   const fetchCustomers = async () => {
     try {
       const response = await axios.get(
-        "https://round-3-pet-store.digital-vision-solutions.com/api/customers"
+        "https://round-3-pet-store.digital-vision-solutions.com/storage/customers/customer1.jpg"
       );
       console.log("Customers response:", response.data);
       setCustomers(response.data.data);
