@@ -13,9 +13,11 @@ import { Product } from "../../types";
 const ProductsSection: React.FC = () => {
 
 
+
   const handleViewMoreClick = (product: Product) => {
       console.log("View more clicked for product:", product);
     };
+
 
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
@@ -49,7 +51,9 @@ const ProductsSection: React.FC = () => {
             <h2 className="text-2xl text-[#003459] font-bold">Our Products</h2>
           </div>
           <button className="hidden sm:inline-block text-[#003459] font-medium border border-[#003459] rounded-full px-4 py-2 hover:bg-[#003459] hover:text-white transition"
+
           
+
           >
             View more →
           </button>
