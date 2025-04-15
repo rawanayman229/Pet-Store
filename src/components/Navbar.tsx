@@ -110,12 +110,12 @@ const Navbar: React.FC = () => {
                     </ul>
 
                     {/* Desktop Search */}
-                    <div className="hidden md:flex bg-white rounded-full px-8 py-4 shadow-sm">
+                    <div className="hidden md:flex bg-white rounded-full px-5 py-4 shadow-sm items-center">
                         <IconField iconPosition="left">
-                            <InputIcon className="pi pi-search" />
+                            <InputIcon className="pi pi-search -mt-2" />
                             <InputText
                                 placeholder="Search something here!"
-                                className="focus:outline-none rounded-full ml-10"
+                                className="focus:outline-none rounded-full ml-10 "
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
                                 onKeyDown={handleSearchKeyDown}
@@ -133,10 +133,10 @@ const Navbar: React.FC = () => {
                 {searchVisible && (
                     <div ref={searchInputRef} className="sm:hidden absolute top-full left-0 w-full bg-white shadow-md z-40 p-4">
                         <IconField iconPosition="left" className="w-full">
-                            <InputIcon className="pi pi-search" />
+                            <InputIcon className="pi pi-search -mt-2" />
                             <InputText
                                 placeholder="Search something here!"
-                                className="!rounded-full bg-white border px-4 py-2 shadow-sm focus:outline-none w-full"
+                                className="!rounded-full bg-white border px-8 py-2 shadow-sm  w-full"
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
                                 onKeyDown={handleSearchKeyDown}
