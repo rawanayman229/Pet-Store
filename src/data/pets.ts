@@ -7,7 +7,7 @@ export interface Pet {
     gender: "Male" | "Female";
     age: string;
     price: string;
-    image: string;
+    images: string;
   }
   
   export const pets: Pet[] = [
@@ -18,7 +18,7 @@ export interface Pet {
       gender: "Male",
       age: "02 months",
       price: "6.900.000 $",
-      image: "images/dog.jpg",
+      images: "images/dog.jpg",
     },
     {
       id: "MO502",
@@ -27,7 +27,7 @@ export interface Pet {
       gender: "Female",
       age: "02 months",
       price: "3.900.000 $",
-      image:"images/dog.jpg",
+      images:"images/dog.jpg",
     },
     {
         id: "MO502",
@@ -36,7 +36,7 @@ export interface Pet {
         gender: "Female",
         age: "02 months",
         price: "3.900.000 $",
-        image:"/images/dog.jpg",
+        images:"/images/dog.jpg",
       },
       {
         id: "MO502",
@@ -45,7 +45,7 @@ export interface Pet {
         gender: "Female",
         age: "02 months",
         price: "3.900.000 $",
-        image:"./images/dog.jpg",
+        images:"./images/dog.jpg",
       },
       {
         id: "MO502",
@@ -54,7 +54,7 @@ export interface Pet {
         gender: "Female",
         age: "02 months",
         price: "3.900.000 $",
-        image:"images/dog.jpg",
+        images:"images/dog.jpg",
       },
       {
         id: "MO502",
@@ -63,7 +63,7 @@ export interface Pet {
         gender: "Female",
         age: "02 months",
         price: "3.900.000 $",
-        image:"images/dog.jpg",
+        images:"images/dog.jpg",
       },
       {
         id: "MO502",
@@ -72,7 +72,7 @@ export interface Pet {
         gender: "Female",
         age: "02 months",
         price: "3.900.000 $",
-        image:"images/dog.jpg",
+        images:"images/dog.jpg",
       },
       {
         id: "MO502",
@@ -81,7 +81,7 @@ export interface Pet {
         gender: "Female",
         age: "02 months",
         price: "3.900.000 $",
-        image:"images/dog.jpg",
+        images:"images/dog.jpg",
       },
     
   ];

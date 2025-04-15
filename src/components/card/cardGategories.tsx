@@ -1,13 +1,14 @@
 // da component elly lelshakl elly fe card bta3 el card home
 
+import { Pet } from "@/types";
 import React from "react";
-import { Pet } from "../../data/pets";
+
 
 const PetCardSection: React.FC<{ pet: Pet }> = ({ pet }) => {
   return (
     <div className="bg-white rounded-2xl shadow-md sm:p-4 p-2 hover:shadow-lg transition duration-300">
       <div className="flex justify-center mb-2 sm:mb-4">
-      <img src={pet.image} alt={pet.name} className="w-full h-40 sm:h-44 object-cover rounded" />
+      <img src={pet.images[0]} alt={pet.name} className="w-full h-40 sm:h-44 object-cover rounded" />
       </div>
       <div className="p-4">
         <h3 className="font-semibold text-[#003459] mb-1">{pet.id} - {pet.name}</h3>
