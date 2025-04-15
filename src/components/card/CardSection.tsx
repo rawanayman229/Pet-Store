@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -46,7 +45,7 @@ const PetGategories: React.FC = () => {
             </h2>
           </div>
           <button className="hidden sm:inline-block text-[#003459] font-medium border border-[#003459] rounded-full px-4 py-2 hover:bg-[#003459] hover:text-white transition"
-           onClick={handleViewMoreClick}
+           
           
           >
             View more →
@@ -58,15 +57,18 @@ const PetGategories: React.FC = () => {
         ) : (
           <div className="grid grid-cols-1 min-[375px]:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 mb-6">
             {pets.map((pet, idx) => (
+              <div key={idx} onClick={() => handleViewMoreClick()} className="cursor-pointer">
               <PetCardSection key={idx} pet={pet} />
+              </div>
             ))}
+            
           </div>
         )}
 
 <div className="sm:hidden">
       <button
         className="w-full text-[#003459] font-medium border border-[#003459] rounded-full px-4 py-2 hover:bg-[#003459] hover:text-white transition"
-        onClick={handleViewMoreClick} // Trigger the navigation on button click
+        
       >
         View more →
       </button>
@@ -77,4 +79,3 @@ const PetGategories: React.FC = () => {
 };
 
 export default PetGategories;
-

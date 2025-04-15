@@ -11,7 +11,7 @@ const ProductCardSection: React.FC<ProductCardProps> = ({ product }) => {
   const navigate = useNavigate();
 
   const handleNavigate = () => {
-    navigate(`/product/${product.id}`);
+    navigate(`/ProductDetails`);
   };
 
   return (
@@ -24,7 +24,7 @@ const ProductCardSection: React.FC<ProductCardProps> = ({ product }) => {
       </div>
 
       <h3
-        className="text-base font-bold text-[#00171F] leading-snug cursor-pointer hover:underline"
+        className="text-base font-bold text-[#00171F] leading-snug "
         onClick={handleNavigate}
       >
         {product.name}
@@ -34,9 +34,7 @@ const ProductCardSection: React.FC<ProductCardProps> = ({ product }) => {
         Product: {product.category} . Size: {product.size} </p>
 
       
-      <h3 className="text-sm sm:text-base font-bold text-[#00171F] leading-snug mb-1">
-        {product.name}
-      </h3>
+      
 
       
       <p className="text-[#002A48] font-bold text-sm sm:text-lg mt-1">
