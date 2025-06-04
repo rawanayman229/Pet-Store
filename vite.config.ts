@@ -8,6 +8,5 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
 
   plugins: [react(), tailwindcss(),],
-
-  base: "/round-3-pet-store-front/"
+base: './',
 })
